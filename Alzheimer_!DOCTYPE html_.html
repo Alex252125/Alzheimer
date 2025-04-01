@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recordatorio Positivo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+        .container {
+            max-width: 500px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .message-box {
+            font-size: 1.2rem;
+            font-weight: bold;
+            padding: 20px;
+            background: #ffeeba;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container text-center">
+        <h1 class="mb-4">¿Qué debo recordar hoy?</h1>
+        <button class="btn btn-warning btn-lg" onclick="mostrarMensaje()">Descúbrelo</button>
+        <div id="mensaje" class="message-box animate__animated animate__fadeIn d-none"></div>
+    </div>
+    
+    <script>
+        const mensajes = [
+            "Hoy es un gran día para aprender algo nuevo.",
+            "Come almendras y nueces, son excelentes para la memoria.",
+            "Caminar diariamente mejora tu salud y tu mente.",
+            "Escuchar música estimula el cerebro y mejora la memoria.",
+            "Duerme bien, tu cerebro necesita descanso para recordar mejor.",
+            "Ejercicios mentales como el ajedrez fortalecen tu memoria.",
+            "Sonríe, la felicidad también ayuda a recordar momentos importantes."
+        ];
+        
+        function mostrarMensaje() {
+            const mensajeElemento = document.getElementById('mensaje');
+            const mensajeAleatorio = mensajes[Math.floor(Math.random() * mensajes.length)];
+            mensajeElemento.textContent = mensajeAleatorio;
+            mensajeElemento.classList.remove('d-none');
+            mensajeElemento.classList.add('animate__fadeIn');
+        }
+    </script>
+</body>
+</html>
